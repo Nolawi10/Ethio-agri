@@ -1,5 +1,6 @@
 import { Card } from "@/components/ui/card";
-import { BookOpen, Leaf, Droplet, Shield } from "lucide-react";
+import { Button } from "@/components/ui/button";
+import { BookOpen, Leaf, Droplet, Shield, Download } from "lucide-react";
 
 const Guides = () => {
   const guideCategories = [
@@ -69,10 +70,14 @@ const Guides = () => {
           {/* Featured Guide */}
           <Card className="p-8 shadow-medium bg-gradient-to-br from-primary/5 to-success/5">
             <div className="space-y-4">
-              <div className="flex items-center gap-2">
+              <div className="flex items-center justify-between">
                 <div className="px-3 py-1 bg-accent/20 text-accent rounded-full text-sm font-medium ethiopic">
                   ተወዳጅ
                 </div>
+                <Button variant="outline" size="sm" className="ethiopic">
+                  <Download className="w-4 h-4 mr-2" />
+                  ያውርዱ (PDF)
+                </Button>
               </div>
               <h2 className="text-2xl md:text-3xl font-bold ethiopic">
                 የጤፍ የእድገት ደረጃዎች እና እንክብካቤ
@@ -116,6 +121,36 @@ const Guides = () => {
                   <div>
                     <div className="font-medium ethiopic">ማጨድ</div>
                     <div className="text-sm text-muted-foreground ethiopic">ትክክለኛው ጊዜ</div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </Card>
+
+          {/* Offline Access Info */}
+          <Card className="p-6 bg-success/10 border-success/20">
+            <div className="flex items-start gap-4">
+              <div className="w-12 h-12 bg-success/20 rounded-lg flex items-center justify-center flex-shrink-0">
+                <BookOpen className="w-6 h-6 text-success" />
+              </div>
+              <div className="flex-1">
+                <h3 className="font-bold text-lg mb-2 ethiopic">ከመስመር ውጭ መዳረሻ</h3>
+                <p className="text-muted-foreground ethiopic leading-relaxed mb-4">
+                  ሁሉም መመሪያዎች ኢንተርኔት ከሌለ በኋላ ሊደረሱ ይችላሉ። አንዴ ከተመለከቱ በኋላ፣ 
+                  በመሳሪያዎ ላይ ተቀምጠዋል። በ PDF ፎርማት ማውረድ ይችላሉ።
+                </p>
+                <div className="grid sm:grid-cols-3 gap-3">
+                  <div className="flex items-center gap-2 text-sm">
+                    <div className="w-2 h-2 bg-success rounded-full"></div>
+                    <span className="ethiopic">አማርኛ</span>
+                  </div>
+                  <div className="flex items-center gap-2 text-sm">
+                    <div className="w-2 h-2 bg-success rounded-full"></div>
+                    <span className="ethiopic">አፋን ኦሮሞ</span>
+                  </div>
+                  <div className="flex items-center gap-2 text-sm">
+                    <div className="w-2 h-2 bg-success rounded-full"></div>
+                    <span className="ethiopic">ትግርኛ</span>
                   </div>
                 </div>
               </div>
