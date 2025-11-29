@@ -1,6 +1,7 @@
 import { Button } from "@/components/ui/button";
-import { Camera, BookOpen, MessageCircle, Leaf } from "lucide-react";
+import { Camera, BookOpen, MessageCircle, Leaf, LogIn } from "lucide-react";
 import { useNavigate } from "react-router-dom";
+import logo from "@/assets/logo.png";
 
 const Home = () => {
   const navigate = useNavigate();
@@ -10,6 +11,8 @@ const Home = () => {
       {/* Hero Section */}
       <section className="container mx-auto px-4 py-12 md:py-20">
         <div className="max-w-4xl mx-auto text-center space-y-6">
+          <img src={logo} alt="Ethio Agri Logo" className="w-24 h-24 mx-auto mb-4" />
+          
           <div className="inline-flex items-center gap-2 px-4 py-2 bg-success/10 rounded-full mb-4">
             <Leaf className="w-4 h-4 text-success" />
             <span className="text-sm font-medium text-success ethiopic">
@@ -44,6 +47,16 @@ const Home = () => {
             >
               <BookOpen className="w-5 h-5 mr-2" />
               መመሪያዎችን ይመልከቱ
+            </Button>
+            
+            <Button
+              size="lg"
+              variant="secondary"
+              className="w-full sm:w-auto text-lg h-14 px-8 ethiopic"
+              onClick={() => navigate("/auth")}
+            >
+              <LogIn className="w-5 h-5 mr-2" />
+              ይግቡ / ይመዝገቡ
             </Button>
           </div>
         </div>

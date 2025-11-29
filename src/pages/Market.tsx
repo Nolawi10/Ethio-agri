@@ -1,6 +1,12 @@
 import { Card } from "@/components/ui/card";
 import { Button } from "@/components/ui/button";
 import { MapPin, Phone } from "lucide-react";
+import ureaFertilizer from "@/assets/products/urea-fertilizer.jpg";
+import coffeeCompost from "@/assets/products/coffee-compost.jpg";
+import dapFertilizer from "@/assets/products/dap-fertilizer.jpg";
+import organicPesticide from "@/assets/products/organic-pesticide.jpg";
+import fertilizerSpreader from "@/assets/products/fertilizer-spreader.jpg";
+import waterPump from "@/assets/products/water-pump.jpg";
 
 const Market = () => {
   const products = [
@@ -11,6 +17,7 @@ const Market = () => {
       unit: "50 kg",
       distance: "2.5 ኪሜ",
       vendor: "የግብርና ድርጅት",
+      image: ureaFertilizer,
     },
     {
       nameAm: "የቡና ኮምፖስት",
@@ -19,6 +26,7 @@ const Market = () => {
       unit: "5 ቶን",
       distance: "5 ኪሜ",
       vendor: "የአካባቢ ገበሬዎች ማህበር",
+      image: coffeeCompost,
     },
     {
       nameAm: "DAP ማዳበሪያ",
@@ -27,6 +35,7 @@ const Market = () => {
       unit: "50 kg",
       distance: "3 ኪሜ",
       vendor: "የግብርና ድርጅት",
+      image: dapFertilizer,
     },
     {
       nameAm: "ተፈጥሮአዊ ፀረ ተባይ",
@@ -35,6 +44,7 @@ const Market = () => {
       unit: "1 ሊትር",
       distance: "4 ኪሜ",
       vendor: "ኢኮ ግሪን",
+      image: organicPesticide,
     },
     {
       nameAm: "የማዳበሪያ መርጫ",
@@ -43,6 +53,7 @@ const Market = () => {
       unit: "ክፍል",
       distance: "10 ኪሜ",
       vendor: "የግብርና መሳሪያዎች",
+      image: fertilizerSpreader,
     },
     {
       nameAm: "የውሃ ፓምፕ",
@@ -51,6 +62,7 @@ const Market = () => {
       unit: "ክፍል",
       distance: "12 ኪሜ",
       vendor: "የመስኖ መፍትሄዎች",
+      image: waterPump,
     },
   ];
 
@@ -70,9 +82,13 @@ const Market = () => {
           <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
             {products.map((product, idx) => (
               <Card key={idx} className="overflow-hidden shadow-soft hover:shadow-medium transition-all">
-                {/* Product Image Placeholder */}
-                <div className="h-48 bg-gradient-to-br from-primary/10 to-success/10 flex items-center justify-center">
-                  <div className="text-6xl opacity-20">📦</div>
+                {/* Product Image */}
+                <div className="h-48 bg-muted overflow-hidden">
+                  <img 
+                    src={product.image} 
+                    alt={product.nameAm}
+                    className="w-full h-full object-cover"
+                  />
                 </div>
                 
                 <div className="p-6 space-y-4">

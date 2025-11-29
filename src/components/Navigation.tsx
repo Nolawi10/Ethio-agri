@@ -1,5 +1,6 @@
-import { Home, Camera, BookOpen, ShoppingBag, History, LayoutDashboard } from "lucide-react";
+import { Home, Camera, BookOpen, ShoppingBag, History, Cloud } from "lucide-react";
 import { NavLink } from "./NavLink";
+import logo from "@/assets/logo.png";
 
 const Navigation = () => {
   const navItems = [
@@ -7,6 +8,7 @@ const Navigation = () => {
     { to: "/diagnose", icon: Camera, labelAm: "ምርመራ", labelEn: "Diagnose" },
     { to: "/guides", icon: BookOpen, labelAm: "መመሪያ", labelEn: "Guides" },
     { to: "/market", icon: ShoppingBag, labelAm: "ገበያ", labelEn: "Market" },
+    { to: "/weather", icon: Cloud, labelAm: "የአየር ሁኔታ", labelEn: "Weather" },
     { to: "/history", icon: History, labelAm: "ታሪክ", labelEn: "History" },
   ];
 
@@ -17,9 +19,7 @@ const Navigation = () => {
         <div className="container mx-auto px-4">
           <div className="flex items-center justify-between h-16">
             <div className="flex items-center gap-2">
-              <div className="w-10 h-10 bg-gradient-primary rounded-lg flex items-center justify-center">
-                <span className="text-primary-foreground font-bold text-xl ethiopic">ኢ</span>
-              </div>
+              <img src={logo} alt="Ethio Agri" className="w-10 h-10" />
               <span className="text-xl font-bold ethiopic">Ethio Agri</span>
             </div>
             
