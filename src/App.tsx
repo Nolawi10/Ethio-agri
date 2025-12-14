@@ -11,6 +11,7 @@ import Market from "./pages/Market";
 import Weather from "./pages/Weather";
 import HistoryPage from "./pages/HistoryPage";
 import Auth from "./pages/Auth";
+import Admin from "./pages/Admin";
 import NotFound from "./pages/NotFound";
 
 const queryClient = new QueryClient();
@@ -30,6 +31,7 @@ const App = () => (
           <Route path="/weather" element={<Weather />} />
           <Route path="/history" element={<HistoryPage />} />
           <Route path="/auth" element={<Auth />} />
+          <Route path="/admin" element={<Admin />} />
           {/* ADD ALL CUSTOM ROUTES ABOVE THE CATCH-ALL "*" ROUTE */}
           <Route path="*" element={<NotFound />} />
         </Routes>
