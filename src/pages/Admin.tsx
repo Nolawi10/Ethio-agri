@@ -79,7 +79,11 @@ const Admin = () => {
     totalUsers: 856,
     pendingReviews: diagnoses.filter(d => d.status === "pending").length,
     topDeficiency: "የናይትሮጅን እጥረት",
-    topRegion: "ኦሮሚያ"
+    topRegion: "ኦሮሚያ",
+    weeklyGrowth: 12.5,
+    monthlyDiagnoses: 342,
+    activeExtensionWorkers: 45,
+    totalGuides: 28
   };
 
   const regionStats = [
@@ -88,6 +92,21 @@ const Admin = () => {
     { region: "SNNPR", count: 249, percentage: 20 },
     { region: "ትግራይ", count: 163, percentage: 13 },
     { region: "ሌሎች", count: 100, percentage: 8 },
+  ];
+
+  const cropStats = [
+    { crop: "ጤፍ", count: 456, trend: "+15%" },
+    { crop: "በቆሎ", count: 312, trend: "+8%" },
+    { crop: "ስንዴ", count: 234, trend: "+12%" },
+    { crop: "ቡና", count: 189, trend: "+5%" },
+    { crop: "ማሽላ", count: 56, trend: "-2%" },
+  ];
+
+  const recentUsers = [
+    { name: "አብርሃም ተስፋዬ", region: "ኦሮሚያ", date: "2024-01-15", role: "ገበሬ" },
+    { name: "ሳራ ገብረ", region: "አማራ", date: "2024-01-14", role: "ኤክስቴንሽን" },
+    { name: "ዳዊት ሞላ", region: "ትግራይ", date: "2024-01-14", role: "ገበሬ" },
+    { name: "ሜሮን አበበ", region: "SNNPR", date: "2024-01-13", role: "ገበሬ" },
   ];
 
   const handleAddProduct = () => {
