@@ -6,7 +6,7 @@ ENV/
 .venv/
 
 # Build outputs
-dist/
+# dist/ - Commented out to include built frontend for deployment
 build/
 *.pyc
 __pycache__/
