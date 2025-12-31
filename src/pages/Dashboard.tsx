@@ -41,7 +41,7 @@ const Dashboard = () => {
       diagnosisAm: "የናይትሮጅን እጥረት", 
       diagnosisEn: "Nitrogen Deficiency",
       confidence: 92, 
-      imageUrl: "https://images.unsplash.com/photo-1574323347407-f5e1ad6d020b?w=400&h=300&fit=crop",
+      imageUrl: "https://c8.alamy.com/comp/2P4FTNT/nitrogen-deficiency-in-wheat-triticum-aestivum-close-up-of-the-leaves-2P4FTNT.jpg",
       recommendations: [
         "ዩሪያ ማዳበሪያ በሄክታር 100 ኪሎ ግራም ይጨምሩ",
         "ከዝናብ በኋላ ማዳበሪያውን ይተግብሩ",
@@ -57,7 +57,7 @@ const Dashboard = () => {
       diagnosisAm: "ጤናማ ሰብል", 
       diagnosisEn: "Healthy Crop",
       confidence: 95, 
-      imageUrl: "https://images.unsplash.com/photo-1601593346740-925612772716?w=400&h=300&fit=crop",
+      imageUrl: "https://media.istockphoto.com/id/1061097354/photo/the-corn-plant-in-the-field.jpg?s=612x612&w=0&k=20&c=NEEzE5il-up8g7NZj_7HJUpyVep18zBRfhnMZ5laLiQ=&fit=crop",
       recommendations: [
         "የአሁኑን እንክብካቤ ይቀጥሉ",
         "በየ2 ሳምንቱ ይፈትሹ"
@@ -72,7 +72,7 @@ const Dashboard = () => {
       diagnosisAm: "የቅጠል ዝገት በሽታ", 
       diagnosisEn: "Leaf Rust Disease",
       confidence: 87, 
-      imageUrl: "https://images.unsplash.com/photo-1611070222232-9d7d10b66e23?w=400&h=300&fit=crop",
+      imageUrl: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcROSUEuxrZPGTok0fLeOahviyD0BAe3kn3zuQ&s",
       recommendations: [
         "የመዳብ ላይ የተመሰረተ ፈንገስ መድሃኒት ይጠቀሙ",
         "የተጎዱ ቅጠሎችን ያስወግዱ",
@@ -88,7 +88,7 @@ const Dashboard = () => {
       diagnosisAm: "አፊድ ወረራ", 
       diagnosisEn: "Aphid Infestation",
       confidence: 89, 
-      imageUrl: "https://images.unsplash.com/photo-1530836369250-ef72a3f5cda8?w=400&h=300&fit=crop",
+      imageUrl: "https://thumbs.dreamstime.com/b/aphid-infestation-green-leaves-showing-pests-plant-foliage-natural-garden-environment-aphid-infestation-green-leaves-412722530.jpg",
       recommendations: [
         "ተፈጥሮአዊ ፀረ ተባይ ይጠቀሙ",
         "ጠቃሚ ነፍሳትን ያስተዋውቁ",
@@ -104,7 +104,7 @@ const Dashboard = () => {
       diagnosisAm: "የፖታሲየም እጥረት", 
       diagnosisEn: "Potassium Deficiency",
       confidence: 84, 
-      imageUrl: "https://images.unsplash.com/photo-1595855759920-86582396756a?w=400&h=300&fit=crop",
+      imageUrl: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRGuRkzVcWcvEGWQMeUCkecTB5PVhazEVNsfw&s",
       recommendations: [
         "ፖታሲየም ያለው ማዳበሪያ ይጨምሩ",
         "የአፈር ምርመራ ያድርጉ"
@@ -119,7 +119,7 @@ const Dashboard = () => {
       diagnosisAm: "የፈንገስ በሽታ", 
       diagnosisEn: "Fungal Disease",
       confidence: 91, 
-      imageUrl: "https://images.unsplash.com/photo-1618512496248-a07fe83aa8cb?w=400&h=300&fit=crop",
+      imageUrl: "https://www.shutterstock.com/image-photo/antracnose-disease-on-bulb-onion-260nw-2422860189.jpg",
       recommendations: [
         "የፈንገስ መድሃኒት ይጠቀሙ",
         "የውሃ ፍሰት ያሻሽሉ",
@@ -135,7 +135,7 @@ const Dashboard = () => {
       diagnosisAm: "ጤናማ ሰብል", 
       diagnosisEn: "Healthy Crop",
       confidence: 93, 
-      imageUrl: "https://images.unsplash.com/photo-1518977676601-b53f82ber69?w=400&h=300&fit=crop",
+      imageUrl: "https://www.garden.eco/wp-content/uploads/2018/01/potato-leaves.jpg",
       recommendations: [
         "የአሁኑን እንክብካቤ ይቀጥሉ",
         "ማዳበሪያ በወቅቱ ይጨምሩ"

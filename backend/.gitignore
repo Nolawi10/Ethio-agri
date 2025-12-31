@@ -1,0 +1,35 @@
+# Python
+__pycache__/
+*.py[cod]
+*$py.class
+*.so
+.Python
+env/
+venv/
+ENV/
+.venv
+
+# Database (but allow database in home directory for PythonAnywhere)
+# *.db
+# *.sqlite
+# *.sqlite3
+ethioagri.db
+
+# Environment variables
+.env
+.env.local
+
+# IDE
+.vscode/
+.idea/
+*.swp
+*.swo
+
+# OS
+.DS_Store
+Thumbs.db
+
+# PythonAnywhere
+*.pyc
+.python-version
+

@@ -1,73 +1,168 @@
-# Welcome to your Lovable project
+# Ethio Agri - የእፅዋት ጤንነት ምርመራ
 
-## Project info
+## Project Overview
 
-**URL**: https://lovable.dev/projects/9876f34c-f004-4528-a234-bf10c6283a6b
+AI-powered plant health diagnosis for Ethiopian farmers. Detect nutrient deficiencies, diseases, and pests with localized recommendations.
 
-## How can I edit this code?
+## Project Structure
 
-There are several ways of editing your application.
-
-**Use Lovable**
-
-Simply visit the [Lovable Project](https://lovable.dev/projects/9876f34c-f004-4528-a234-bf10c6283a6b) and start prompting.
-
-Changes made via Lovable will be committed automatically to this repo.
-
-**Use your preferred IDE**
-
-If you want to work locally using your own IDE, you can clone this repo and push changes. Pushed changes will also be reflected in Lovable.
-
-The only requirement is having Node.js & npm installed - [install with nvm](https://github.com/nvm-sh/nvm#installing-and-updating)
-
-Follow these steps:
-
-```sh
-# Step 1: Clone the repository using the project's Git URL.
-git clone <YOUR_GIT_URL>
-
-# Step 2: Navigate to the project directory.
-cd <YOUR_PROJECT_NAME>
-
-# Step 3: Install the necessary dependencies.
-npm i
-
-# Step 4: Start the development server with auto-reloading and an instant preview.
-npm run dev
+```
+ethio-agri-aid/
+├── src/                    # Frontend React application
+├── backend/                # Flask backend API
+│   ├── app.py             # Main Flask application
+│   ├── requirements.txt   # Python dependencies
+│   └── README.md          # Backend documentation
+└── ml_model/              # ML model (standalone)
+    ├── plant_disease_model.py  # TensorFlow Lite model
+    ├── requirements.txt   # ML dependencies
+    └── README.md          # ML model documentation
 ```
 
-**Edit a file directly in GitHub**
+## Development Setup
 
-- Navigate to the desired file(s).
-- Click the "Edit" button (pencil icon) at the top right of the file view.
-- Make your changes and commit the changes.
+### Prerequisites
+- Node.js & npm - [install with nvm](https://github.com/nvm-sh/nvm#installing-and-updating)
+- Python 3.8+ (for backend and ML model)
 
-**Use GitHub Codespaces**
+### Frontend Setup
 
-- Navigate to the main page of your repository.
-- Click on the "Code" button (green button) near the top right.
-- Select the "Codespaces" tab.
-- Click on "New codespace" to launch a new Codespace environment.
-- Edit files directly within the Codespace and commit and push your changes once you're done.
+1. Clone the repository:
+   ```sh
+   git clone <YOUR_GIT_URL>
+   cd ethio-agri-aid
+   ```
 
-## What technologies are used for this project?
+2. Install dependencies:
+   ```sh
+   npm install
+   ```
 
-This project is built with:
+3. Start the development server:
+   ```sh
+   npm run dev
+   ```
 
+The frontend will run on `http://localhost:8080`
+
+### Backend Setup
+
+**Important:** The Flask backend can serve the React app. You need to build the frontend first!
+
+1. Build the React frontend:
+   ```sh
+   npm run build
+   ```
+
+2. Navigate to the backend directory:
+   ```sh
+   cd backend
+   ```
+
+3. Create a virtual environment (recommended):
+   ```sh
+   python -m venv venv
+   # On Windows:
+   venv\Scripts\activate
+   # On macOS/Linux:
+   source venv/bin/activate
+   ```
+
+4. Install dependencies:
+   ```sh
+   pip install -r requirements.txt
+   ```
+
+5. (Optional) Set environment variables:
+   ```sh
+   # Windows (PowerShell):
+   $env:JWT_SECRET_KEY="your-secret-key-here"
+   
+   # macOS/Linux:
+   export JWT_SECRET_KEY="your-secret-key-here"
+   ```
+
+6. Run the backend server:
+   ```sh
+   python app.py
+   # Or use the run script:
+   python run.py
+   ```
+
+The backend will run on `http://localhost:5000` and serve:
+- The React frontend app (from the `/dist` folder)
+- The API endpoints at `/api/*`
+
+**When you visit `http://localhost:5000`, you'll see the web app!**
+
+For more details, see [backend/README.md](backend/README.md)
+
+### ML Model Setup (Standalone)
+
+The ML model is a separate component and is not integrated with the web application.
+
+1. Navigate to the ml_model directory:
+   ```sh
+   cd ml_model
+   ```
+
+2. Install dependencies:
+   ```sh
+   pip install -r requirements.txt
+   ```
+
+3. Use the model:
+   ```sh
+   python plant_disease_model.py <path_to_image.jpg>
+   ```
+
+For more details, see [ml_model/README.md](ml_model/README.md)
+
+## Technologies Used
+
+### Frontend
 - Vite
 - TypeScript
 - React
 - shadcn-ui
 - Tailwind CSS
 
-## How can I deploy this project?
+### Backend
+- Flask
+- Flask-CORS
+- Flask-Bcrypt (password hashing)
+- Flask-JWT-Extended (authentication)
+- SQLite (database)
 
-Simply open [Lovable](https://lovable.dev/projects/9876f34c-f004-4528-a234-bf10c6283a6b) and click on Share -> Publish.
+### ML Model
+- TensorFlow Lite
+- NumPy
+- Pillow (image processing)
 
-## Can I connect a custom domain to my Lovable project?
+## API Endpoints
 
-Yes, you can!
+The backend provides the following endpoints:
 
-To connect a domain, navigate to Project > Settings > Domains and click Connect Domain.
+- `GET /api/health` - Health check
+- `POST /api/auth/signup` - User registration
+- `POST /api/auth/login` - User login
+- `GET /api/auth/me` - Get current user (requires authentication)
+- `POST /api/auth/logout` - Logout (requires authentication)
 
-Read more here: [Setting up a custom domain](https://docs.lovable.dev/features/custom-domain#custom-domain)
+See [backend/README.md](backend/README.md) for detailed API documentation.
+
+## Deployment
+
+The application is ready for deployment to PythonAnywhere. See:
+- [backend/DEPLOYMENT.md](backend/DEPLOYMENT.md) - Full deployment guide
+- [backend/DEPLOYMENT_QUICKSTART.md](backend/DEPLOYMENT_QUICKSTART.md) - Quick start guide
+
+### Key Security Features
+
+- ✅ Production-ready configuration
+- ✅ Secure password hashing (bcrypt)
+- ✅ JWT authentication with configurable expiration
+- ✅ Environment-based configuration
+- ✅ CORS protection in production
+- ✅ Error message sanitization in production
+- ✅ Database stored in writable directory on PythonAnywhere

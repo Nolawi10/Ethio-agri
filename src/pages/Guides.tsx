@@ -322,6 +322,8 @@ const Guides = () => {
     { id: "soil", icon: Mountain, labelAm: "አፈር", labelEn: "Soil" },
   ];
 
+  const [selectedVideo, setSelectedVideo] = useState<{youtubeId: string, title: string} | null>(null);
+
   const videoTutorials = [
     {
       id: 1,
@@ -329,7 +331,8 @@ const Guides = () => {
       titleEn: "Coffee Composting Video Tutorial",
       duration: "12:45",
       views: "15.2K",
-      thumbnail: "https://images.unsplash.com/photo-1459411552884-841db9b3cc2a?w=400"
+      thumbnail: "https://img.youtube.com/vi/z_rIUz17mR4/maxresdefault.jpg",
+      youtubeId: "z_rIUz17mR4"
     },
     {
       id: 2,
@@ -337,7 +340,8 @@ const Guides = () => {
       titleEn: "Preparing Organic Pesticide",
       duration: "8:30",
       views: "23.1K",
-      thumbnail: "https://images.unsplash.com/photo-1416879595882-3373a0480b5b?w=400"
+      thumbnail: "https://img.youtube.com/vi/k141Jh28UCw/maxresdefault.jpg",
+      youtubeId: "k141Jh28UCw"
     },
     {
       id: 3,
@@ -345,7 +349,8 @@ const Guides = () => {
       titleEn: "Modern Teff Planting Techniques",
       duration: "15:20",
       views: "45.8K",
-      thumbnail: "https://images.unsplash.com/photo-1574323347407-f5e1ad6d020b?w=400"
+      thumbnail: "https://img.youtube.com/vi/DVKRdPjZHu0/maxresdefault.jpg",
+      youtubeId: "DVKRdPjZHu0"
     },
     {
       id: 4,
@@ -353,7 +358,8 @@ const Guides = () => {
       titleEn: "Drip Irrigation Setup",
       duration: "10:15",
       views: "18.9K",
-      thumbnail: "https://images.unsplash.com/photo-1563514227147-6d2ff665a6a0?w=400"
+      thumbnail: "https://img.youtube.com/vi/Xej22GsLLQA/maxresdefault.jpg",
+      youtubeId: "Xej22GsLLQA"
     }
   ];
 
@@ -717,7 +723,14 @@ const Guides = () => {
             <TabsContent value="videos" className="space-y-6 mt-6">
               <div className="grid md:grid-cols-2 gap-6">
                 {videoTutorials.map((video) => (
-                  <Card key={video.id} className="overflow-hidden shadow-soft hover:shadow-medium transition-all cursor-pointer group">
+                  <Card 
+                    key={video.id} 
+                    className="overflow-hidden shadow-soft hover:shadow-medium transition-all cursor-pointer group"
+                    onClick={() => setSelectedVideo({
+                      youtubeId: video.youtubeId,
+                      title: language === "am" ? video.titleAm : video.titleEn
+                    })}
+                  >
                     <div className="relative">
                       <img 
                         src={video.thumbnail} 
@@ -751,6 +764,23 @@ const Guides = () => {
                   </Card>
                 ))}
               </div>
+
+              {/* YouTube Video Modal */}
+              <Dialog open={!!selectedVideo} onOpenChange={(open) => !open && setSelectedVideo(null)}>
+                <DialogContent className="sm:max-w-[800px] max-h-[90vh] overflow-y-auto">
+                  <DialogHeader>
+                    <DialogTitle className="ethiopic">{selectedVideo?.title}</DialogTitle>
+                  </DialogHeader>
+                  <div className="relative pt-[56.25%] w-full">
+                    <iframe
+                      src={`https://www.youtube.com/embed/${selectedVideo?.youtubeId}?autoplay=1`}
+                      className="absolute top-0 left-0 w-full h-full rounded-lg"
+                      allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+                      allowFullScreen
+                    />
+                  </div>
+                </DialogContent>
+              </Dialog>
 
               <Card className="p-6 bg-primary/5 border-primary/20">
                 <div className="flex items-center gap-4">
